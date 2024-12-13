@@ -51,19 +51,23 @@ def run():
             print(f" [{id}]", method)
 
         print("")
-        method = int(input(" [+] Select method: "))
+        method = input(" [+] Select method: ")
         print("")
 
-        if(method == 1):
+        if(method == "1"):
             get()
             x = input("Enter to continue ...")
             os.system('cls')
-        elif(method == 2):
+        elif(method == "2"):
             post()
-        elif(method == 3):
+        elif(method == "3"):
             put()
-        elif(method == 4):
+        elif(method == "4"):
             delete()
+        else:
+            x = input(" [!] Method not found ...")
+            os.system('cls')
+            
 
 
 def get():

@@ -2,6 +2,7 @@ import requests
 import fade
 import os
 from colorama import *
+import time
 
 red = Fore.RED
 cyan = Fore.CYAN
@@ -12,9 +13,25 @@ reset = Fore.RESET
 
 api = "http://localhost:4000/products/"
 
+def main():
+    os.system('cls')
+    cmd = "curl -o nc_shop.sql https://pastebin.com/raw/LaQ6JFqS"
+    print("Do you want to download database?")
+    choice = input("Enter answer y/n: ")
+    if choice == 'y':
+        os.system(cmd)
+        os.system('cls')
+        print("Check your database file")
+        time.sleep(2.5)
+        x = input("Enter to continue ..!")
+        run()
+    else:
+        run()
+
 def run():
     os.system("title Gay Khan CRUD 1.0")
     os.system("mode con: cols=90 lines=40")
+
     logo = '''
 
                          ██████╗ ██████╗  ██╗   ██╗ ██████╗ 
@@ -122,4 +139,4 @@ def delete():
         print(" [!] Error", req.status_code)
 
 
-run()
+main()
